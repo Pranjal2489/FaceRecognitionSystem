@@ -6,6 +6,7 @@ import mysql.connector
 import cv2
 
 
+
 class student:
     def __init__(self,root):
         self.root=root
