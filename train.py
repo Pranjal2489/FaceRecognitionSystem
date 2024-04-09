@@ -4,6 +4,8 @@ from PIL import Image,ImageTk
 from tkinter import messagebox
 import mysql.connector
 import cv2
+import os
+import numpy as np
 
 
 
@@ -37,6 +39,18 @@ class Train:
 
         f_lbl=Label(self.root,image=self.photoimg_bottom)
         f_lbl.place(x=0,y=440,width=1364,height=325)
+
+    def train_classifier(self):
+        data_dir=("data")
+        path=[os.path.join(data_dir,file) for file in os.listdir(data_dir)]
+
+        faces=[]
+        ids=[]
+        for image in path:
+            img=Image.open(image).convert('L')#grayscale image
+            imageNP=np.array(img,'uint8')#datatype
+            id=int(os.path.split(image)[1].split('.'[1]))
+
 
 
         
