@@ -4,7 +4,7 @@ from PIL import Image,ImageTk
 import os
 from student import student
 from train import Train
-from face_recognition import FaceRecognition
+from face_recognition import Face_Recognitation
 
 
 class Face_Recognition_System:

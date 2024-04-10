@@ -404,20 +404,20 @@ class student:
         content=self.student_table.item(cursor_focus)
         data=content["values"]
 
-        self.var_dep.set(data[0]),
-        self.var_course.set(data[1]),
-        self.var_year.set(data[2]),
-        self.var_semester.set(data[3]),
-        self.var_StdID.set(data[4]),
-        self.var_stdName.set(data[5]),
-        self.var_div.set(data[6]),
-        self.var_roll.set(data[7]),
-        self.var_gender.set(data[8]),
-        self.var_dob.set(data[9]),
-        self.var_email.set(data[10]),
-        self.var_phone.set(data[11]),
-        self.var_address.set(data[12]),
-        self.var_teacher.set(data[13]),
+        self.var_dep.set(data[0])
+        self.var_course.set(data[1])
+        self.var_year.set(data[2])
+        self.var_semester.set(data[3])
+        self.var_StdID.set(data[4])
+        self.var_stdName.set(data[5])
+        self.var_div.set(data[6])
+        self.var_roll.set(data[7])
+        self.var_gender.set(data[8])
+        self.var_dob.set(data[9])
+        self.var_email.set(data[10])
+        self.var_phone.set(data[11])
+        self.var_address.set(data[12])
+        self.var_teacher.set(data[13])
         self.var_radio1.set(data[14])
 
         # update function
@@ -432,23 +432,23 @@ class student:
                 if Update>0:
                     conn=mysql.connector.connect(host="localhost",username="root",password="Pranjal8924",database="facial_recognition_sytem")
                     my_cursor=conn.cursor()
-                    my_cursor.execute("update student SET Dep=%s ,course=%s ,Year=%s,Semester=%s,Name=%s,Division=%s,Roll=%s,Gender=%s,Dob=%s,Email=%s,Phone=%s,Address=%s,Teacher=%s,PhotoSample=%s where Student_id=%s",(
-                                                                                                                                                                                        self.var_dep.get(),
-                                                                                                                                                                                        self.var_course.get(),
-                                                                                                                                                                                        self.var_year.get(),
-                                                                                                                                                                                        self.var_semester.get(),
-                                                                                                                                                                                        self.var_stdName.get(),
-                                                                                                                                                                                        self.var_div.get(),
-                                                                                                                                                                                        self.var_roll.get(),
-                                                                                                                                                                                        self.var_gender.get(),
-                                                                                                                                                                                        self.var_dob.get(),
-                                                                                                                                                                                        self.var_email.get(),
-                                                                                                                                                                                        self.var_phone.get(),
-                                                                                                                                                                                        self.var_address.get(),
-                                                                                                                                                                                        self.var_teacher.get(),                                                                                        
-                                                                                                                                                                                        self.var_radio1.get(),
-                                                                                                                                                                                        self.var_StdID.get()
-                                                                                                                                                                                ))
+                    my_cursor.execute("update student set Dep=%s ,course=%s ,Year=%s,Semester=%s,Name=%s,Division=%s,Roll=%s,Gender=%s,Dob=%s,Email=%s,Phone=%s,Address=%s,Teacher=%s,PhotoSample=%s where Student_id=%s",(
+                                                self.var_dep.get(),
+                                                self.var_course.get(),
+                                                self.var_year.get(),
+                                                self.var_semester.get(),
+                                                self.var_stdName.get(),
+                                                self.var_div.get(),
+                                                self.var_roll.get(),
+                                                self.var_gender.get(),
+                                                self.var_dob.get(),
+                                                self.var_email.get(),
+                                                self.var_phone.get(),
+                                                self.var_address.get(),
+                                                self.var_teacher.get(),                                                                                        
+                                                self.var_radio1.get(),
+                                                self.var_StdID.get()
+                                        ))
                 else:
                     if  not Update:
                         return
@@ -468,7 +468,7 @@ class student:
             messagebox.showerror("ERROR","Student Id must be required",parent=self.root)
         else: 
             try:
-                delete=messagebox.askyesno("Syudent Delete Page","Do you want to delete this student? ",parent=self.root)
+                delete=messagebox.askyesno("Student Delete Page","Do you want to delete this student? ",parent=self.root)
                 if delete>0:
                     conn=mysql.connector.connect(host="localhost",username="root",password="Pranjal8924",database="facial_recognition_sytem")
                     my_cursor=conn.cursor()
