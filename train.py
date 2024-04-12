@@ -6,13 +6,12 @@ import mysql.connector
 import cv2
 import os
 import numpy as np
-
-
+from sys import path
 
 class Train:
     def __init__(self,root):
         self.root=root
-        self.root.geometry("1530x790+0+0")
+        self.root.geometry("1366x790+0+0")
         self.root.title("Face Recognition System")
 
 
@@ -21,7 +20,7 @@ class Train:
         title_lbl.place(x=0,y=0,width=1366,height=45)
 
         img_top=Image.open(r"images\facialrecognition.webp")
-        img_top = img_top.resize((1364, 325), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
+        img_top = img_top.resize((1364, 325), Image.BILINEAR)  
 
         self.photoimg_top=ImageTk.PhotoImage(img_top)
 
@@ -34,7 +33,7 @@ class Train:
 
 
         img_bottom=Image.open(r"images\train.jpg")
-        img_bottom = img_bottom.resize((1364, 325), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
+        img_bottom = img_bottom.resize((1364, 325), Image.BILINEAR)  
 
         self.photoimg_bottom=ImageTk.PhotoImage(img_bottom)
 
@@ -95,7 +94,7 @@ class Train:
 
 
         # # ============= train the classifier and save===========
-        clf = cv2.face.LBPHFaceRecognizer_create()
+        clf = cv2.face.LBPHFaceRecognizer.create()
         clf.train(faces,ids)
         clf.write("classifier.xml")
         cv2.destroyAllWindows()

@@ -10,7 +10,7 @@ import cv2
 class student:
     def __init__(self,root):
         self.root=root
-        self.root.geometry("1530x790+0+0")
+        self.root.geometry("1366x790+0+0")
         self.root.title("Face Recognition System")
         
 
@@ -32,7 +32,7 @@ class student:
         
 
         # first image
-        img=Image.open(r"C:\Users\hp\Desktop\face_recognition_system\images\s4.jpeg")
+        img=Image.open("images\s4.jpeg")
         img = img.resize((500, 130), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
 
         self.photoimg=ImageTk.PhotoImage(img)
@@ -42,7 +42,7 @@ class student:
 
 
         # second image
-        img1=Image.open(r"C:\Users\hp\Desktop\face_recognition_system\images\s5.jpeg")
+        img1=Image.open("images\s5.jpeg")
         img1 = img1.resize((500, 130), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
 
         self.photoimg1=ImageTk.PhotoImage(img1)
@@ -52,7 +52,7 @@ class student:
 
         # third image
 
-        img2=Image.open(r"C:\Users\hp\Desktop\face_recognition_system\images\s3.jpeg")
+        img2=Image.open("images\s3.jpeg")
         img2 = img2.resize((500, 130), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
 
         self.photoimg2=ImageTk.PhotoImage(img2)
@@ -61,7 +61,7 @@ class student:
         f_lbl.place(x=1000,y=0,width=500,height=130)
 
         # Bg image4
-        img3=Image.open(r"C:\Users\hp\Desktop\face_recognition_system\images\HD-wallpaper-nature.jpg")
+        img3=Image.open("images\HD-wallpaper-nature.jpg")
         img3 = img3.resize((1366, 710), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
 
         self.photoimg3=ImageTk.PhotoImage(img3)
@@ -81,7 +81,7 @@ class student:
         Left_frame=LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("times new roman",11,"bold"))
         Left_frame.place(x=10,y=10,width=650,height=535)
 
-        img_left=Image.open(r"C:\Users\hp\Desktop\face_recognition_system\images\download.jpeg")
+        img_left=Image.open("images\download.jpeg")
         img_left = img_left.resize((720, 130), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
 
         self.photoimg_left=ImageTk.PhotoImage(img_left)
@@ -92,6 +92,7 @@ class student:
         # current course
         current_course_frame=LabelFrame(Left_frame,bd=2,bg="white",relief=RIDGE,text="Current Course Information",font=("times new roman",11,"bold"))
         current_course_frame.place(x=5,y=130,width=640,height=110)
+
         # Department
         dep_label=Label(current_course_frame,text='DEPARTMENT',font=("times new roman",11,"bold"),bg="white")
         dep_label.grid(row=0,column=0,padx=10)
@@ -155,7 +156,7 @@ class student:
         # class_div_entry=ttk.Entry(class_student_frame,textvariable=self.var_div,width=20,font=("times new roman",11,"bold"))
         # class_div_entry.grid(row=1,column=1,padx=10,pady=5,sticky=W)
         div_combo=ttk.Combobox(class_student_frame,textvariable=self.var_div,font=("times new roman",11,"bold"),state="readonly",width=18)
-        div_combo["values"]=("A","B","C")
+        div_combo["values"]=("Select Division","A","B","C")
         div_combo.current(0)
         div_combo.grid(row=1,column=1,padx=10,pady=5)
 
@@ -174,7 +175,7 @@ class student:
         # Gender_entry.grid(row=2,column=1,padx=10,pady=5,sticky=W)
 
         gender_combo=ttk.Combobox(class_student_frame,textvariable=self.var_gender,font=("times new roman",11,"bold"),state="readonly",width=18)
-        gender_combo["values"]=("Male","Female","Other")
+        gender_combo["values"]=("Select Gender","Male","Female","Other")
         gender_combo.current(0)
         gender_combo.grid(row=2,column=1,padx=10,pady=5,sticky=W)
 
@@ -264,7 +265,7 @@ class student:
         Right_frame=LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("times new roman",11,"bold"))
         Right_frame.place(x=670,y=10,width=650,height=535)
 
-        img_right=Image.open(r"C:\Users\hp\Desktop\face_recognition_system\images\d2.jpeg")
+        img_right=Image.open("images\d2.jpeg")
         img_right = img_right.resize((720, 130), Image.BILINEAR)  
 
         self.photoimg_right=ImageTk.PhotoImage(img_right)
@@ -277,7 +278,7 @@ class student:
         search_frame=LabelFrame(Right_frame,bd=2,bg="white",relief=RIDGE,text="Search System",font=("times new roman",11,"bold"))
         search_frame.place(x=5,y=135,width=635,height=70)
 
-        search_label=Label(search_frame,text='Search By:',font=("times new roman",13,"bold"),bg="red",fg="white")
+        search_label=Label(search_frame,text='Search By :',font=("times new roman",13,"bold"),bg="red",fg="white")
         search_label.grid(row=0,column=0,padx=10,pady=5)
 
         search_combo=ttk.Combobox(search_frame,font=("times new roman",11,"bold"),state="readonly",width=15)

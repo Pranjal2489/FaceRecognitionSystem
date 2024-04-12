@@ -10,12 +10,12 @@ import cv2
 class attendence:
     def __init__(self,root):
         self.root=root
-        self.root.geometry("1530x790+0+0")
+        self.root.geometry("1366x790+0+0")
         self.root.title("Face Recognition System")
 
         # first image
         img=Image.open("images\s4.jpeg")
-        img = img.resize((500, 200), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
+        img = img.resize((500, 200), Image.BILINEAR) 
 
         self.photoimg=ImageTk.PhotoImage(img)
 
@@ -25,7 +25,7 @@ class attendence:
 
         # second image
         img1=Image.open("images\s5.jpeg")
-        img1 = img1.resize((500, 130), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
+        img1 = img1.resize((500, 130), Image.BILINEAR) 
 
         self.photoimg1=ImageTk.PhotoImage(img1)
 
