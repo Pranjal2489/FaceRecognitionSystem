@@ -33,7 +33,7 @@ class student:
 
         # first image
         img=Image.open("images\s4.jpeg")
-        img = img.resize((500, 130), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
+        img = img.resize((500, 130), Image.BILINEAR)  
 
         self.photoimg=ImageTk.PhotoImage(img)
 
@@ -43,7 +43,7 @@ class student:
 
         # second image
         img1=Image.open("images\s5.jpeg")
-        img1 = img1.resize((500, 130), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
+        img1 = img1.resize((500, 130), Image.BILINEAR)  
 
         self.photoimg1=ImageTk.PhotoImage(img1)
 
@@ -53,7 +53,7 @@ class student:
         # third image
 
         img2=Image.open("images\s3.jpeg")
-        img2 = img2.resize((500, 130), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
+        img2 = img2.resize((500, 130), Image.BILINEAR)  
 
         self.photoimg2=ImageTk.PhotoImage(img2)
 
@@ -62,7 +62,7 @@ class student:
 
         # Bg image4
         img3=Image.open("images\HD-wallpaper-nature.jpg")
-        img3 = img3.resize((1366, 710), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
+        img3 = img3.resize((1366, 710), Image.BILINEAR)  
 
         self.photoimg3=ImageTk.PhotoImage(img3)
 
@@ -82,7 +82,7 @@ class student:
         Left_frame.place(x=10,y=10,width=650,height=535)
 
         img_left=Image.open("images\download.jpeg")
-        img_left = img_left.resize((720, 130), Image.BILINEAR)  # or Image.BICUBIC, Image.LANCZOS, etc.
+        img_left = img_left.resize((720, 130), Image.BILINEAR)  
 
         self.photoimg_left=ImageTk.PhotoImage(img_left)
 
@@ -357,22 +357,22 @@ class student:
                 conn=mysql.connector.connect(host="localhost",username="root",password="Pranjal8924",database="facial_recognition_sytem")
                 my_cursor=conn.cursor()
                 my_cursor.execute("insert into student values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
-                                                                                                                self.var_dep.get(),
-                                                                                                                self.var_course.get(),
-                                                                                                                self.var_year.get(),
-                                                                                                                self.var_semester.get(),
-                                                                                                                self.var_StdID.get(),
-                                                                                                                self.var_stdName.get(),
-                                                                                                                self.var_div.get(),
-                                                                                                                self.var_roll.get(),
-                                                                                                                self.var_gender.get(),
-                                                                                                                self.var_dob.get(),
-                                                                                                                self.var_email.get(),
-                                                                                                                self.var_phone.get(),
-                                                                                                                self.var_address.get(),
-                                                                                                                self.var_teacher.get(),                                                                                        
-                                                                                                                self.var_radio1.get()
-                                                                                        ))
+                                    self.var_dep.get(),
+                                    self.var_course.get(),
+                                    self.var_year.get(),
+                                    self.var_semester.get(),
+                                    self.var_StdID.get(),
+                                    self.var_stdName.get(),
+                                    self.var_div.get(),
+                                    self.var_roll.get(),
+                                    self.var_gender.get(),
+                                    self.var_dob.get(),
+                                    self.var_email.get(),
+                                    self.var_phone.get(),
+                                    self.var_address.get(),
+                                    self.var_teacher.get(),                                                                                        
+                                    self.var_radio1.get()
+                                ))
 
                 conn.commit()
                 self.fetch_data()
@@ -524,21 +524,21 @@ class student:
                 for x in myresult:
                     id+=1
                 my_cursor.execute("update student SET Dep=%s ,course=%s ,Year=%s,Semester=%s,Name=%s,Division=%s,Roll=%s,Gender=%s,Dob=%s,Email=%s,Phone=%s,Address=%s,Teacher=%s,PhotoSample=%s where Student_id=%s",(
-                                                                                                                                                                                    self.var_dep.get(),
-                                                                                                                                                                                    self.var_course.get(),
-                                                                                                                                                                                    self.var_year.get(),
-                                                                                                                                                                                    self.var_semester.get(),
-                                                                                                                                                                                    self.var_stdName.get(),
-                                                                                                                                                                                    self.var_div.get(),
-                                                                                                                                                                                    self.var_roll.get(),
-                                                                                                                                                                                    self.var_gender.get(),
-                                                                                                                                                                                    self.var_dob.get(),
-                                                                                                                                                                                    self.var_email.get(),
-                                                                                                                                                                                    self.var_phone.get(),
-                                                                                                                                                                                    self.var_address.get(),
-                                                                                                                                                                                    self.var_teacher.get(),                                                                                        
-                                                                                                                                                                                    self.var_radio1.get(),
-                                                                                                                                                                                    self.var_StdID.get()==id+1
+                                            self.var_dep.get(),
+                                            self.var_course.get(),
+                                            self.var_year.get(),
+                                            self.var_semester.get(),
+                                            self.var_stdName.get(),
+                                            self.var_div.get(),
+                                            self.var_roll.get(),
+                                            self.var_gender.get(),
+                                            self.var_dob.get(),
+                                            self.var_email.get(),
+                                            self.var_phone.get(),
+                                            self.var_address.get(),
+                                            self.var_teacher.get(),                                                                                        
+                                            self.var_radio1.get(),
+                                            self.var_StdID.get()==id+1
                 ))
                 conn.commit()
                 self.fetch_data()
