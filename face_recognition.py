@@ -66,8 +66,8 @@ class Face_Recognitation:
     def face_recog(self):
         def draw_boundary(img, classifier, scaleFactor, minNeighbours, color, text, clf):
             gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            features=classifier.detect
-            # features = classifier.detectMultiScale(gray_image, scaleFactor, minNeighbours)
+            # features=classifier.detect
+            features = classifier.detectMultiScale(gray_image, scaleFactor, minNeighbours)
 
             for (x, y, w, h) in features:
                 cv2.rectangle(img, (x, y), (x + w, y + h), color, 3)
